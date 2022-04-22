@@ -1,14 +1,19 @@
 # Találd ki a fővárost/országot
-Ez egy egyszerű tippelgetős játék, ahol a nehézségnek megfelelően kiválasztott random ==országnak== meg kell adni a ==fővárosát==
+Ez egy egyszerű tippelgetős játék, ahol a nehézségnek megfelelően kiválasztott `országnak` meg kell adni a `fővárosát`.
 
+# Játékszabályok
+bla bla bla
+
+
+# Fejlesztés
 ## Felépítés:
 - szint választás (kezdő, haladó, veterán) 
-- `szint.darab` darabszámú elem betöltése
+- szint.darab darabszámú elem betöltése
 - tippelés (user)
-- összegzés (jó tipp/rossz tip; jó tippek százaléka)
+- összegzés (jó tippek százaléka?)
 - play again?
 
 
 ## Feljegyzések
 - flex shirt-grow hosszabb orszagnevekre!
-- loop helyett async await!!
+- loop helyett async await! 

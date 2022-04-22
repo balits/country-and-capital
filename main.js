@@ -17,6 +17,7 @@ const led         = document.getElementById('led');
 // buttons('EASY' || 'MEDIUM' || 'HARD'); default is 'EASY
 function selectDiff() {                    
   const currentType = event.target
+  difficulty = currentType.id;
   let types = document.getElementsByClassName('mode');
   let activeType = undefined;
   let allInactive = true;  
@@ -44,7 +45,6 @@ function selectDiff() {
     currentType.classList.add(currentType.id);
   }
   
-  difficulty = currentType.id;
 }
 
 // extract and savedata from API
@@ -63,17 +63,22 @@ function generateList() {
     case 'easy':
       list.forEach((e) => {
         if (!l.includes(e)) {
-          if (e.population >= 40000000 || e.subregion === 'Northern America' && e.population >= 5000000 || e.region === 'Europe' && e.population >= 5000000) {
+          if ( e.subregion === 'Northern America' && e.population >= 5000000 || e.region === 'Europe' && e.population >= 5000000) {
             l.push(e);
           }
         }
+        // if (!l.includes(e)) {
+        //   if (e.population >= 40000000 || e.subregion === 'Northern America' && e.population >= 5000000 || e.region === 'Europe' && e.population >= 5000000) {
+        //     l.push(e);
+        //   }
+        // }
       });
     break;
       
     // needs refinement
     case 'medium':
       list.forEach(e => {
-        if (!list.includes(e) || e.population <= 550000000 || e.region === 'America' || e.subregion === 'Southern Asia') {
+        if (!list.includes(e) || e.population <= 400000000 && e.population >= 1000000 || e.region === 'America' || e.subregion === 'Southern Asia') {
           l.push(e);
         }
       });      
@@ -82,7 +87,7 @@ function generateList() {
     // needs refinement
     case 'hard':
       list.forEach(e => {
-        if (e.population >= 500000000) {
+        if (e.population < 15000000 && e.population > 1000000) {
           l.push(e);
         }
       });
@@ -91,7 +96,7 @@ function generateList() {
     default:
     break;
   }
-         
+
   return l;  
 }
 
@@ -101,10 +106,12 @@ function startGame() {
     alert('Select a difficulty!');
     return;
   }
-  console.log("NEW GAME STARTED\tMODE: " + difficulty);  
+  console.log("NEW GAME STARTED\tMODE: " + difficulty);
+
 
   setTimeout(() => {
-    let listAsDiff = generateList() ;
+    let listAsDiff = generateList();
+    console.log("Number of Counties: " + listAsDiff.length);
     game(listAsDiff,used);
   }, 1000);
 }
@@ -167,23 +174,3 @@ function evalGuess(guess, randomCountry) {
     return false;
   }
 }
-
-// LIGHT-MODE || DARK-MODE
-function toggle_light_mode() {
-  var app = document.getElementsByTagName("BODY")[0];
-  if (localStorage.lightMode == "dark") {
-      localStorage.lightMode = "light";
-      app.setAttribute("light-mode", "light");
-  } else {
-      localStorage.lightMode = "dark";
-      app.setAttribute("light-mode", "dark");
-  }       
-}
-
-// window.addEventListener("storage", () => {
-//   if (localStorage.lightMode == "dark") {
-//     app.setAttribute("light-mode", "dark");
-//   } else {
-//     app.setAttribute("light-mode", "light");
-//   }
-// }, false);
