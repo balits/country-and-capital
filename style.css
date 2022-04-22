@@ -1,0 +1,260 @@
+:root {
+  --border-color: #161616;
+}
+
+html {
+  overflow: hidden;
+}
+*{
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+  background-color: #1C1C1E;
+  transition: background-color 0.3s;
+}
+
+body[light-mode-button=dark] {
+  background-color: #1C1C1E;
+}
+
+body[light-mode-button=light] {
+  background-color: white;
+}
+
+body[light-mode=light] .light-mode-button span:nth-child(1) {
+  background-color: #252728;
+}
+
+body[light-mode=light] .light-mode-button span:nth-child(2) {
+  left: 65px;
+  background-color: white;
+}
+
+.main-container {
+  position:absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding-inline: 1rem;
+  background-color: transparent;
+}
+
+.start-btn{
+  cursor: pointer;
+  height: 50%;
+  width: 20%;
+  min-height: 3rem;
+  padding: 0.75rem 2.25rem;
+  border-radius: 2.5rem;
+  margin: 0 auto;
+
+  background-color: rgb(10, 132, 255);
+  color: white;
+  font-size: 1.75rem;
+  font-weight: bold;
+  border: none;
+  text-transform: capitalize;
+  transition: 0.3s;
+
+  flex-shrink: 0;
+}
+.start-btn:hover,
+.start-btn:active{
+  background-color: rgb(39, 147, 255);
+}
+
+.light-mode-button {
+  background: 0;
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+  position: relative;
+  border: 1px solid rgba(255,255,255,0);
+}
+
+.light-mode-button span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #CED4E2;
+  box-shadow: inset 1px 1px 3px 0 rgb(0 0 0 / 40%);
+  transition: .3s;
+}
+
+.light-mode-button span:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 40%);
+  transition: .3s;
+}
+
+/* flex container for top row menu */
+.toprow {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  gap: 1rem;
+  height: 15vh;
+  max-width: 1400px;
+}
+
+/* flex container for difficulty modes */
+.diff {
+  color: #6e6e6e;
+  background: #252728;
+  display: flex;
+
+  min-width: 20rem;
+  width: 40vw;
+  max-width: 35rem;
+  height: 75%;
+  min-height: 3rem;
+
+  border-radius: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  font-size: 1.25rem;
+  border:1px solid var(--border-color);
+  flex-shrink: 0;
+}
+/* colors for each difficulty */
+.easy {
+  background-color: #2DC943;
+  color: black;
+}
+/* colors for each difficulty */
+.medium {
+  background-color: #FFC12F;
+  color: black;
+}
+/* }colors for each difficulty */
+.hard {
+  background-color: #FE5F57;
+  color: black;
+}
+
+.mode {
+  text-align: center;
+  height: 100%;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  cursor: pointer;
+}
+
+.hide-color {
+  background-color: transparent;
+  color: #6e6e6e;
+}
+
+.diff #easy {
+  border-radius: inherit;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.diff :nth-child(2) {
+  border-right: 1px solid #161616;
+  border-left: 1px solid #161616;
+}
+
+.diff :nth-child(3) {
+  border-radius: inherit;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+
+.container {
+  display: flex;
+  flex: 0 0 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100%;
+  width: 100%;
+}
+
+
+.card {
+  background-color: #252728;
+  width: 50rem;
+  height: 12rem;
+  border-radius: 1.5rem;
+  border:1px solid var(--border-color);
+  padding: .5rem;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text {
+  background-color: transparent;
+  color: white;
+  height: 40%;
+  width: 40%;
+  border-radius: 2rem;
+  border: 2px solid #464649;
+
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: capitalize;
+  padding: .5rem;
+}
+
+.card input  { color: rgb(174, 174, 178) }
+.card input:focus,
+.card input:active,
+.card input:hover{
+  color: white
+}
+
+.led {
+  background: #1C1C1E;
+  width: 100%;
+  height: calc(40% + 4rem);
+  max-height: 60%;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    height: 15rem;
+    width: 55vw;
+  }
+  .text {
+    height: 50%;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+  }
+}
