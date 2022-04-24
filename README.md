@@ -12,8 +12,3 @@ bla bla bla
 - tippelés (user)
 - összegzés (jó tippek százaléka?)
 - play again?
-
-
-## Feljegyzések
-- flex shirt-grow hosszabb orszagnevekre!
-- loop helyett async await! 
