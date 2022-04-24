@@ -6,30 +6,25 @@
   <meta name="viewport" content="width=, initial-scale=1.0">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   
-  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="/css/main.css"> 
   <title>Ajax Amsterdam</title>
 </head>
-<body light-mode="dark">
-  <div class="main-container">
-    <header class="toprow">
-      <div class="diff">
-        <div onclick=selectDiff(this) id="easy" class="easy mode">EASY</div>
-        <div onclick=selectDiff(this) id="medium" class="hide-color mode">MEDIUM</div>
-        <div onclick=selectDiff(this) id="hard" class="hide-color mode" >HARD</div>
-      </div>
-
-      <button class="start-btn" onclick=startGame()>start</button>
-        
-    </header>
-
-    <div class="card-container">
-      <div class="led" id="led">
-        <div class="card">
-          <input class="text" id="capital" placeholder="Capital"></input>
-          <div class="text" id="country" placeholder="Country">Country</div>
-        </div>    
-      </div>
+<body class="bg-black h-screen w-screen">
+  <header class="h-20 w-screen max-w-[1024px] flex flex-row justify-between text-4xl py-2 mx-auto">
+    <div class="flex flex-row w-fit">
+      <div onclick=selectDiff(this) id="easy"  class="bg-ios-green text-black px-4 py-2 border-2 border-solid   border-background rounded-tl-2xl rounded-bl-2xl cursor-pointer">EASY</div>
+      <div onclick=selectDiff(this) id="medium" class="bg-ios-yellow text-black px-4 py-2 border-t-2 border-b-2 border-solid border-background cursor-pointer">MEDIUM</div>
+      <div onclick=selectDiff(this) id="hard"  class="bg-ios-red text-black px-4 py-2 border-2 border-solid   border-background rounded-tr-2xl rounded-br-2xl cursor-pointer" >HARD</div>
     </div>
+    <div class="border-solid border-2 rounded-[2rem] px-8 py-2" onclick=start()>START</div>
+    <div class="border-solid border-2 rounded-[2rem] px-8 py-2" onclick=reset()>RESET</div>
+  </header>
+
+  <div class="w-full h-full flex justify-center items-center">  
+      <div class="bg-separator w-4/5 h-40 p-4 flex flex-row gap-2 justify-center items-center  rounded-3xl ">
+        <input class="w-2/5 h-1/2 rounded-xl text-2xl text-center bg-transparent" id="capital" placeholder="Capital"></input>
+        <div class="w-2/5 h-1/2 rounded-xl text-2xl text-center py-4" id="country" placeholder="Country">Country</div>
+      </div>
   </div>
 </body>
 
