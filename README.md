@@ -8,5 +8,5 @@ Amennyiben nagyobb kihívás érdekel:
 1. Ha még nem indítóttál játékot, válts `MEDIUM`-ra vagy `HARD`-ra.
 2. Ha esetleg játékban vagy, nyomj a `RESET`-re és ezt követően tedd meg az első lépést
 
-## A játék maga
+## Játékmenet
 A játék START gombbal indul és addig megy, amíg végig nem mentünk minden adott `országon`, vagy meg nem nyomjuk a `RESET` gombot. 
